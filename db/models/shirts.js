@@ -3,7 +3,8 @@ const mongoose = require('./pants')
 const ShirtsSchema = new mongoose.Schema({
     name: String,
     category: String,
-    color: String
+    color: String,
+    tags: [String]
 })
 
 const Shirts = mongoose.model('Shirts', ShirtsSchema)
