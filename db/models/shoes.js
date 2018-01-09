@@ -8,7 +8,7 @@ const ShoesSchema = new mongoose.Schema({
     tags: [String]
 })
 
-const Shoes = mongoose.model('Shoes', ShoeSchema)
+const Shoes = mongoose.model('Shoes', ShoesSchema)
 
 module.exports = Shoes
 module.exports = mongoose
