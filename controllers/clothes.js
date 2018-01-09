@@ -32,15 +32,19 @@ router.get('/closet/shoes', (req, res) => {
     res.render('shoes')
 })
 
+router.get('/add-accessories', (req, res) => {
+    res.render('add-accessories')
+})
+
 router.get('/:name', (req, res) => {
     res.render('closet', { name: req.params.name })
 })
 
-router.post("/closet/accessories", (req, res) => { //might need route post on a seperate page
+router.post('/add-accessories', (req, res) => { 
     console.log("working")
-    Accessories.create(req.body.recipe)
+    Accessories.create(req.body.closet)
         .then(recipe => {
-            res.redirect(`/recipes/${recipe.name}`)
+            res.redirect(`/closet/${accessories.name}`)
         })
         .catch(err => {
             console.log(err)
