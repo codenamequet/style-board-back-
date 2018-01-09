@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codenamequet/pdf-creator.git"
+    "url": "git+https://github.com/codenamequet/project-2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codenamequet/pdf-creator/issues"
+    "url": "https://github.com/codenamequet/project-2/issues"
   },
-  "homepage": "https://github.com/codenamequet/pdf-creator#readme",
+  "homepage": "https://github.com/codenamequet/project-2#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

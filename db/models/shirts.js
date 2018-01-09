@@ -4,6 +4,7 @@ const ShirtsSchema = new mongoose.Schema({
     name: String,
     category: String,
     color: String,
+    images: String,
     tags: [String]
 })
 
