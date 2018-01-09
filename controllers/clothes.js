@@ -16,24 +16,35 @@ router.get('/closet', (req, res) => {
     res.render('closet')
 })
 
-router.get('/accessories', (req, res) => {
+router.get('/closet/accessories', (req, res) => {
     res.render('accessories')
 })
 
-router.get('/shirts', (req, res) => {
+router.get('/closet/shirts', (req, res) => {
     res.render('shirts')
 })
 
-router.get('/pants', (req, res) => {
+router.get('/closet/pants', (req, res) => {
     res.render('pants')
 })
 
-router.get('/shoes', (req, res) => {
+router.get('/closet/shoes', (req, res) => {
     res.render('shoes')
 })
 
 router.get('/:name', (req, res) => {
     res.render('closet', { name: req.params.name })
+})
+
+router.post("/closet/accessories", (req, res) => { //might need route post on a seperate page
+    console.log("working")
+    Accessories.create(req.body.recipe)
+        .then(recipe => {
+            res.redirect(`/recipes/${recipe.name}`)
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 
 module.exports = router
