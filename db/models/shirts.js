@@ -8,7 +8,6 @@ const ShirtsSchema = new mongoose.Schema({
     tags: [String]
 })
 
-const Shirts = mongoose.model('Shirts', ShirtsSchema)
+mongoose.model('Shirts', ShirtsSchema)
 
-module.exports = Shirts
 module.exports = mongoose

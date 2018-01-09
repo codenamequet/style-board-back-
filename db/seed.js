@@ -1,12 +1,17 @@
-const Accessories = require('/models/accessories')
-const Shirts = require('/models/shirts')
-const Pants = require('/models/pants')
-const Shoes = require('/models/shoes')
-const seedData = require('seeds.json')
+const mongoose          = require('./models/shoes')
+const Accessories       = mongoose.model('Accessories')
+const Shirts            = mongoose.model('Shirts')
+const Pants             = mongoose.model('Pants')
+const Shoes             = mongoose.model('Shoes') 
+
+const accessoriesSeeds  = require('./accessories-seeds.json')
+const shirtsSeeds       = require('./shirts-seeds.json')
+const pantsSeeds        = require('./pants-seeds.json')
+const shoesSeeds        = require('./shoes-seeds.json')
 
 Accessories.remove({})
 .then(() => {
-    return Accessories.collection.insert(seedData)
+    return Accessories.collection.insert(accessoriesSeeds)
 })
 .then(() => {
     process.exit()
@@ -14,7 +19,7 @@ Accessories.remove({})
 
 Shirts.remove({})
 .then(() => {
-    return Shirts.collection.insert(seedData)
+    return Shirts.collection.insert(shirtsSeeds)
 })
 .then(() => {
     process.exit()
@@ -22,7 +27,7 @@ Shirts.remove({})
 
 Pants.remove({})
 .then(() => {
-    return Pants.collection.insert(seedData)
+    return Pants.collection.insert(pantsSeeds)
 })
 .then(() => {
     process.exit()
@@ -30,7 +35,7 @@ Pants.remove({})
 
 Shoes.remove({})
 .then(() => {
-    return Shoes.collection.insert(seedData)
+    return Shoes.collection.insert(shoesSeeds)
 })
 .then(() => {
     process.exit()

@@ -8,27 +8,27 @@ const router        = express.Router()
 
 
 
-router.get('/clothes/about', (req, res) => {
+router.get('/about', (req, res) => {
     res.render('about')
 })
 
-router.get('/clothes/closet', (req, res) => {
+router.get('/closet', (req, res) => {
     res.render('closet')
 })
 
-router.get('/clothes/accessories', (req, res) => {
+router.get('/accessories', (req, res) => {
     res.render('accessories')
 })
 
-router.get('/clothes/shirts', (req, res) => {
+router.get('/shirts', (req, res) => {
     res.render('shirts')
 })
 
-router.get('/clothes/pants', (req, res) => {
+router.get('/pants', (req, res) => {
     res.render('pants')
 })
 
-router.get('/clothes/shoes', (req, res) => {
+router.get('/shoes', (req, res) => {
     res.render('shoes')
 })
 

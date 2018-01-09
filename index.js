@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
     res.render('./welcome')
 })
 
-app.use('/clothes', clothes)
+app.use('/', clothes)
 
 app.listen(app.set('port'), () => {
     console.log('It\'s aliiiiive on PORT', app.get('port'))

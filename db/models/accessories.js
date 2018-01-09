@@ -8,7 +8,6 @@ const AccessoriesSchema = new mongoose.Schema({
     tags: [String]
 })
 
-const Accessories = mongoose.model('Accessories', AccessoriesSchema)
+mongoose.model('Accessories', AccessoriesSchema)
 
-module.exports = Accessories
 module.exports = mongoose
