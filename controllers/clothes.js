@@ -20,7 +20,7 @@ router.get('/about', (req, res) => {
     res.render('about')
 })
 
-router.get('/closet', (req, res) => {
+router.get('/closet', (req, res) => {c
     res.render('closet')
 })
 
@@ -60,11 +60,11 @@ router.get('/:name', (req, res) => {
     res.render('closet', { name: req.params.name })
 })
 
-router.post('/add-accessories', (req, res) => { 
+router.post('/add-shoes', (req, res) => { 
     console.log("working")
-    Accessories.create(req.body.accessories)
-        .then(accessories => {
-            res.redirect(`/closet/${accessories.name}`)
+    Shoes.create(req.body.shoes)
+        .then(shoes => {
+            res.redirect(`/closet/${shoes.name}`)
         })
         .catch(err => {
             console.log(err)
