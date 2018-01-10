@@ -20,7 +20,7 @@ router.get('/about', (req, res) => {
     res.render('about')
 })
 
-router.get('/closet', (req, res) => {c
+router.get('/closet', (req, res) => {
     res.render('closet')
 })
 
