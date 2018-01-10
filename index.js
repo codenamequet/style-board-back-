@@ -21,7 +21,7 @@ app.engine(
 app.use('/assets', express.static('public'))
 
 app.get('/', (req,res) => {
-    res.render('./welcome')
+    res.render('welcome')
 })
 
 app.use('/', clothes)

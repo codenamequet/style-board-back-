@@ -2,14 +2,17 @@
 {{!-- {{shirts}} --}}
 {{!-- {{pants}} --}}
 {{!-- {{shoes}} --}}
-<h1 class="center">Closet</h1>
-{{#each accessories as |closet|}}
-    <h2 class="#">
-        {{#if accessories.images}}
-        <img src={{accessories.images}} alt="accessory-image" class="accessory-image"></img>
-        {{else}}
-        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="accessory-image" class="accessory-image"></img>
-        {{/if}}
-        <a href="/closet/{{accessories.name}}">{{accessories.name}}</a>
-    </h2>
-{{/each}}
+    <h1 class="center">Closet</h1>
+
+    <div>
+        {{#each shoes as |closet|}}
+        <h2 class="shoes-list-item">
+            {{#if shoes.image}}
+            <img src={{shoes.image}} alt="shoe-image" class="shoe-image"></img>
+            {{else}}
+            <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="shoes-image" class="shoes-image"></img>
+            {{/if}}
+            <a href="/recipes/{{shoes.name}}">{{shoes.name}}</a>
+        </h2>
+        {{/each}}
+    </div>

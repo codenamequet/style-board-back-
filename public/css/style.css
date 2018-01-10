@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    color: black;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+li {
+    color: black;
+}
+.main-image {
+    height: 650px;
+    width: 1000px;
+    background:url('http://images.jordansdaily.com/wp-content/uploads/2016/06/air-jordan-3-black-cement-3.png')
+}

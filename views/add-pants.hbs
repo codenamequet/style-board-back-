@@ -1,0 +1,17 @@
+<div class="#">
+    <h1 class="center">Add A New Pants</h1>
+
+    <form action="/add-shirts" method="post" class="new-pants-form">
+        <input type="text" name="pants[name]" placeholder="Name " />
+        <input type="text" name="pants[category]" placeholder="Category" />
+        <input type="text" name="pants[color]" placeholder="Color" />
+        <input type="text" name="pants[images]" placeholder="Image URL" />
+        <input type="text" name="pants[tags]" placeholder="Tags" />
+        {{!-- <input type="submit" value="Add An Accessory" class="submit-button" /> --}}
+    <div class=row>
+        <button class="btn waves-effect waves-light col s4 offset-s4 m2 offset-m5" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+        </button>
+    </div>
+    </form>
+</div>

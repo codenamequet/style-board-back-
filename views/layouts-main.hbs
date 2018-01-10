@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Project 2</title>
 </head>
 <body>
@@ -19,14 +20,14 @@
     </ul>
     <nav class="red darken-2">
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Clothes App</a>
+            <a href="/" class="brand-logo black-text">Clothes App</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="black-text">Home</a></li>
                 <!-- Dropdown Trigger -->
-                <li><a href="/closet" data-target="dropdown1">Closet</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/closet" data-target="dropdown1" class="black-text">Closet</a></li>
+                <li><a href="/about" class="black-text">About</a></li>
                 <!-- Dropdown Trigger -->
-                <li><a class ="dropdown-trigger" href="#" data-target="dropdown1"><i class="material-icons">more_vert</i></a></li>
+                <li><a class ="dropdown-trigger" href="#" data-target="dropdown1" class="black-text"><i class="material-icons black">more_vert</i></a></li>
                 <form class="right">
                     <div class="input-field">
                     <input id="search" type="search" required>
@@ -38,9 +39,35 @@
         </div>
     </nav>
 
-<div class="container">
+<main class="container">
     {{{body}}}
-</div>
+</main>
+
+<footer class="page-footer red darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="black-text">Clothes App</h5>
+                <p class="black-text text-lighten-4">I think I should come up with a motto or something to put here</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="black-text">Links</h5>
+                <ul>
+                  <li><a class="black-text text-lighten-3" href="/">Home</a></li>
+                  <li><a class="black-text text-lighten-3" href="/closet">Closet</a></li>
+                  <li><a class="black-text text-lighten-3" href="/about">About</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">More</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container black-text">
+            © 2017 MDR Designs
+            {{!-- <a class="black-text text-lighten-4 right" href="#!">More Links</a> --}}
+            </div>
+          </div>
+        </footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="assets/js/script.js"></script>

@@ -6,7 +6,15 @@ const Shoes         = require('../db/models/shoes.js')
 
 const router        = express.Router()
 
-
+router.get('/', (req, res) => {
+    Shoes.find({})
+        .then(shoes => {
+            res.render('closet', { shoes: shoes })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
 
 router.get('/about', (req, res) => {
     res.render('about')
@@ -36,14 +44,26 @@ router.get('/add-accessories', (req, res) => {
     res.render('add-accessories')
 })
 
+router.get('/add-shirts', (req, res) => {
+    res.render('add-shirts')
+})
+
+router.get('/add-pants', (req, res) => {
+    res.render('add-pants')
+})
+
+router.get('/add-shoes', (req, res) => {
+    res.render('add-shoes')
+})
+
 router.get('/:name', (req, res) => {
     res.render('closet', { name: req.params.name })
 })
 
 router.post('/add-accessories', (req, res) => { 
     console.log("working")
-    Accessories.create(req.body.closet)
-        .then(recipe => {
+    Accessories.create(req.body.accessories)
+        .then(accessories => {
             res.redirect(`/closet/${accessories.name}`)
         })
         .catch(err => {
