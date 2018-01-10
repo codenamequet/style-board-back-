@@ -1,4 +1,14 @@
 <h1 class="center">Pants</h1>
+
+{{#each pants as |pant|}}
+        {{#if pant.images}}
+        <img src={{pant.images}} alt="pants-image" class="pants-image"></img>
+        {{else}}
+        <img src"https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="pants-image" class="pants-image"></img>
+        {{/if}}
+        <a href="/closet/{{pant.name}}">{{pant.name}}</a>
+{{/each}}
+
 <div class=row>
         <a href="/add-pants">
         <button class="btn waves-effect waves-light col s6 offset-s3 m4 offset-m4 l4 offset-l4" type="submit" name="action">Add Pants

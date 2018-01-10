@@ -1,4 +1,4 @@
-const mongoose = require('./shirts')
+const mongoose = require('../connection.js')
 
 const ShoesSchema = new mongoose.Schema({
     name: String,

@@ -1,15 +1,45 @@
 const express       = require('express')
-const Accessories   = require('../db/models/accessories.js')
-const Shirts        = require('../db/models/shirts.js')
-const Pants         = require('../db/models/pants.js')
-const Shoes         = require('../db/models/shoes.js')
+const Accessories   = require('../db/models/accessories.js').model('Accessories')
+const Shirts        = require('../db/models/shirts.js').model('Shirts')
+const Pants         = require('../db/models/pants.js').model('Pants')
+const Shoes         = require('../db/models/shoes.js').model('Shoes')
 
 const router        = express.Router()
 
-router.get('/', (req, res) => {
+router.get('/closet/shoes', (req, res) => {
     Shoes.find({})
         .then(shoes => {
-            res.render('closet', { shoes: shoes })
+            res.render('shoes', { shoes: shoes })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+router.get('/closet/shirts', (req, res) => {
+    Shirts.find({})
+        .then(shirts => {
+            res.render('shirts', { shirts: shirts })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+router.get('/closet/pants', (req, res) => {
+    Pants.find({})
+        .then(pants => {
+            res.render('pants', { pants: pants })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+router.get('/closet/accessories', (req, res) => {
+    Accessories.find({})
+        .then(accessories => {
+            res.render('accessories', { accessories: accessories })
         })
         .catch(err => {
             console.log(err)
@@ -28,17 +58,17 @@ router.get('/closet/accessories', (req, res) => {
     res.render('accessories')
 })
 
-router.get('/closet/shirts', (req, res) => {
-    res.render('shirts')
-})
+// router.get('/closet/shirts', (req, res) => {
+//     res.render('shirts')
+// })
 
 router.get('/closet/pants', (req, res) => {
     res.render('pants')
 })
 
-router.get('/closet/shoes', (req, res) => {
-    res.render('shoes')
-})
+// router.get('/closet/shoes', (req, res) => {
+//     res.render('shoes')
+// })
 
 router.get('/add-accessories', (req, res) => {
     res.render('add-accessories')
