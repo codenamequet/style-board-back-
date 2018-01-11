@@ -48,6 +48,10 @@ router.get('/closet/shoes', (req, res) => {
         })
 })
 
+router.get('/item/:name', (req, res) => {
+    
+})
+
 router.get('/about', (req, res) => {
     res.render('about')
 })
