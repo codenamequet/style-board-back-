@@ -1,4 +1,4 @@
-const mongoose = require('./accessories')
+const mongoose = require('../connection')
 
 const PantsSchema = new mongoose.Schema({
     name: String,

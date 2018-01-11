@@ -1,8 +1,8 @@
-const mongoose          = require('./models/shoes')
-const Accessories       = mongoose.model('Accessories')
-const Shirts            = mongoose.model('Shirts')
-const Pants             = mongoose.model('Pants')
-const Shoes             = mongoose.model('Shoes') 
+const mongoose          = require('./connection')
+const Accessories       = require('./models/accessories').model('Accessories')
+const Shirts            = require('./models/Shirts').model('Shirts')
+const Pants             = require('./models/Pants').model('Pants')
+const Shoes             = require('./models/Shoes').model('Shoes')
 
 const accessoriesSeeds  = require('./accessories-seeds.json')
 const shirtsSeeds       = require('./shirts-seeds.json')

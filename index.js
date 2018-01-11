@@ -21,7 +21,7 @@ app.engine(
 
 app.use(parser.urlencoded( { extended: true } ))
 app.use('/assets', express.static('public'))
-
+app.use(methodOverride('_method'))
 app.get('/', (req,res) => {
     res.render('welcome')
 })
