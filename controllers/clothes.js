@@ -53,7 +53,7 @@ router.get('/closet/shoes', (req, res) => {
 router.get('/closet/accessories/:name', (req, res) => {
     Accessories.findOne({ name: req.params.name })
         .then(accessory => {
-            res.render('item', { accessory })
+            res.render('update-accessories', { accessory })
         })
         .catch(err => {
             console.log(err)
@@ -61,9 +61,9 @@ router.get('/closet/accessories/:name', (req, res) => {
 })
 
 router.get('/closet/shirts/:name', (req, res) => {
-    Shirts.findOne({ name: shirt })
+    Shirts.findOne({ name: req.params.name })
         .then(shirt => {
-            res.render('item', { shirt })
+            res.render('update-shirts', { shirt })
         })
         .catch(err => {
             console.log(err)
@@ -71,9 +71,9 @@ router.get('/closet/shirts/:name', (req, res) => {
 })
 
 router.get('/closet/pants/:name', (req, res) => {
-    Pants.findOne({ name: pant })
+    Pants.findOne({ name: req.params.name })
         .then(pant => {
-            res.render('item', { pant })
+            res.render('update-pants', { pant })
         })
         .catch(err => {
             console.log(err)
@@ -197,40 +197,70 @@ router.post('/closet/shoes/:name', (req, res) => {
 })
 
 //routes for updating items
-router.put('/:name', (req, res) => {
+// router.put('/:name', (req, res) => {
+//     Accessories.findOneAndUpdate({ name: req.params.name }, req.body.accessories, { new: true })
+//         .then(accessories => {
+//             res.redirect(`/item/${accessories.name}`)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// })
+
+// router.put('/:name', (req, res) => {
+//     Shirts.findOneAndUpdate({ name: req.params.name }, req.body.shirts, { new: true })
+//         .then(shirts => {
+//             res.redirect(`/item/${shirts.name}`)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// })
+
+// router.put('/:name', (req, res) => {
+//     Pants.findOneAndUpdate({ name: req.params.name }, req.body.pants, { new: true })
+//         .then(pants => {
+//             res.redirect(`/item/${pants.name}`)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// })
+
+// router.put('/:name', (req, res) => {
+//     Shoes.findOneAndUpdate({ name: req.params.name }, req.body.shoes, { new: true })
+//         .then(shoes => {
+//             res.redirect(`/item/${shoes.name}`)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// })
+
+router.put('/closet/accessories/:name', (req, res) => {
     Accessories.findOneAndUpdate({ name: req.params.name }, req.body.accessories, { new: true })
-        .then(accessories => {
-            res.redirect(`/item/${accessories.name}`)
+        .then(accessory => {
+            res.redirect('/closet/accessories/:name')
         })
         .catch(err => {
             console.log(err)
         })
 })
 
-router.put('/:name', (req, res) => {
+router.put('/closet/shirts/:name', (req, res) => {
     Shirts.findOneAndUpdate({ name: req.params.name }, req.body.shirts, { new: true })
-        .then(shirts => {
-            res.redirect(`/item/${shirts.name}`)
+        .then(shirt => {
+            res.redirect('/closet/accessories/:name')
         })
         .catch(err => {
             console.log(err)
         })
 })
 
-router.put('/:name', (req, res) => {
+router.put('/closet/pants/:name', (req, res) => {
     Pants.findOneAndUpdate({ name: req.params.name }, req.body.pants, { new: true })
-        .then(pants => {
-            res.redirect(`/item/${pants.name}`)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-})
-
-router.put('/:name', (req, res) => {
-    Shoes.findOneAndUpdate({ name: req.params.name }, req.body.shoes, { new: true })
-        .then(shoes => {
-            res.redirect(`/item/${shoes.name}`)
+        .then(pant => {
+            res.redirect('/closet/pants/:name')
         })
         .catch(err => {
             console.log(err)
@@ -248,10 +278,40 @@ router.put('/closet/shoes/:name', (req, res) => {
 })
 
 //routes for deleting stuff
-router.delete('/:name', (req, res) => {
-    Shoes.findOneAndRemove({ name: req.params.delete }, req.body.shoes, { new: true })
+router.delete('/closet/accessories/:name', (req, res) => {
+    Accessories.findOneAndRemove({ name: req.params.name })
+        .then(accessories => {
+            res.redirect('/closet/accessories')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+router.delete('/closet/shirts/:name', (req, res) => {
+    Shirts.findOneAndRemove({ name: req.params.name })
+        .then(shirts => {
+            res.redirect('/closet/shirts')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+router.delete('/closet/pants/:name', (req, res) => {
+    Pants.findOneAndRemove({ name: req.params.name })
+        .then(pants => {
+            res.redirect('/closet/pants')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+router.delete('/closet/shoes/:name', (req, res) => {
+    Shoes.findOneAndRemove({ name: req.params.name })
         .then(shoes => {
-            res.redirect(`/item/${shoes.name}`)
+            res.redirect('/closet/shoes')
         })
         .catch(err => {
             console.log(err)

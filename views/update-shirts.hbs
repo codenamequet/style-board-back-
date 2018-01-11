@@ -1,0 +1,20 @@
+<div class="#">
+    <h1 class="center">Update {{ shirt.name }}</h1>
+
+    <form action="/closet/shirts/{{shirt.name}}?_method=put" method="post" class="update-shirts-form">
+        <input type="text" name="shirts[name]" placeholder="Name " />
+        <input type="text" name="shirts[category]" placeholder="Category" />
+        <input type="text" name="shirts[color]" placeholder="Color" />
+        <input type="text" name="shirts[images]" placeholder="Image URL" />
+        <input type="text" name="shirts[tags]" placeholder="Tags" />
+        {{!-- <input type="submit" value="Add An Accessory" class="submit-button" /> --}}
+    <div class=row>
+        <button class="btn waves-effect waves-light col s12 black" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+        </button>
+    </div>
+    </form>
+    <form action="/closet/shirts/{{shirt.name}}?_method=delete" method="post">
+        <button class="btn waves-effect waves-light col s12 black" type="submit" name="action">Delete</button>
+    </form>
+</div>
