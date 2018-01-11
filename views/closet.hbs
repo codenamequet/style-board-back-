@@ -4,15 +4,11 @@
 {{!-- {{shoes}} --}}
     <h1 class="center">Closet</h1>
 
-    <div>
-        {{#each shoes as |closet|}}
-        <h2 class="shoes-list-item">
-            {{#if shoes.image}}
-            <img src={{shoes.image}} alt="shoe-image" class="shoe-image"></img>
-            {{else}}
-            <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="shoes-image" class="shoes-image"></img>
-            {{/if}}
-            <a href="/recipes/{{shoes.name}}">{{shoes.name}}</a>
-        </h2>
-        {{/each}}
-    </div>
+{{#each accessories as |accessory|}}
+        {{#if accessory.images}}
+        <img src={{accessory.images}} alt="accessories-image" class="accessories-image"></img>
+        {{else}}
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="accessories-image" class="accessories-image"></img>
+        {{/if}}
+        <a href="/closet/accessories/{{accessory.name}}">{{accessory.name}}</a>
+{{/each}}
