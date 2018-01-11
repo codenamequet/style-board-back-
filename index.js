@@ -18,6 +18,8 @@ app.engine(
         defaultLayout: 'layouts-main'
     })
 )
+
+app.use(parser.urlencoded( { extended: true } ))
 app.use('/assets', express.static('public'))
 
 app.get('/', (req,res) => {
