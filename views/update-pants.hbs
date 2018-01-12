@@ -2,10 +2,10 @@
     <h1 class="center">Update {{ pant.name }}</h1>
 
     <form action="/closet/pants/{{pant.name}}?_method=put" method="post" class="update-pants-form">
-        <input type="text" name="pants[name]" placeholder="Name " />
-        <input type="text" name="pants[category]" placeholder="Category" />
-        <input type="text" name="pants[color]" placeholder="Color" />
-        <input type="text" name="pants[images]" placeholder="Image URL" />
+        <input type="text" name="pants[name]" placeholder="Name " required/>
+        <input type="text" name="pants[category]" Value="Pants" />
+        <input type="text" name="pants[color]" placeholder="Color" required/>
+        <input type="text" name="pants[images]" placeholder="Image URL" required/>
         <input type="text" name="pants[tags]" placeholder="Tags" />
         {{!-- <input type="submit" value="Add An Accessory" class="submit-button" /> --}}
     <div class=row>

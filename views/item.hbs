@@ -2,19 +2,19 @@
     <h1 class="center">Update {{ shoe.name }}</h1>
 
     <form action="/closet/shoes/{{shoe.name}}?_method=put" method="post" class="new-shoes-form">
-        <input type="text" name="shoes[name]" placeholder="Name " />
-        <input type="text" name="shoes[category]" placeholder="Category" />
-        <input type="text" name="shoes[color]" placeholder="Color" />
-        <input type="text" name="shoes[images]" placeholder="Image URL" />
+        <input type="text" name="shoes[name]" placeholder="Name" required/>
+        <input type="text" name="shoes[category]" value="Shoe" />
+        <input type="text" name="shoes[color]" placeholder="Color" required/>
+        <input type="text" name="shoes[images]" placeholder="Image URL" required/>
         <input type="text" name="shoes[tags]" placeholder="Tags" />
         {{!-- <input type="submit" value="Add An Accessory" class="submit-button" /> --}}
     <div class=row>
-        <button class="btn waves-effect waves-light col s12 black" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-        </button>
+        <button class="btn waves-effect waves-light col s12 black" type="submit" name="action">Submit</button>
     </div>
     </form>
+    <div class="row">
     <form action="/closet/shoes/{{shoe.name}}?_method=delete" method="post">
         <button class="btn waves-effect waves-light col s12 black" type="submit" name="action">Delete</button>
     </form>
+    </div>
 </div>

@@ -2,10 +2,10 @@
     <h1 class="center">Add A New Shirt</h1>
 
     <form action="/add-shirts" method="post" class="new-shirts-form">
-        <input type="text" name="shirts[name]" placeholder="Name " />
-        <input type="text" name="shirts[category]" placeholder="Category" />
-        <input type="text" name="shirts[color]" placeholder="Color" />
-        <input type="text" name="shirts[images]" placeholder="Image URL" />
+        <input type="text" name="shirts[name]" placeholder="Name " required/>
+        <input type="text" name="shirts[category]" Value="Shirt" />
+        <input type="text" name="shirts[color]" placeholder="Color" required/>
+        <input type="text" name="shirts[images]" placeholder="Image URL" required/>
         <input type="text" name="shirts[tags]" placeholder="Tags" />
         {{!-- <input type="submit" value="Add An Accessory" class="submit-button" /> --}}
     <div class=row>
