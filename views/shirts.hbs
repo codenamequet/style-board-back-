@@ -2,7 +2,7 @@
 
 {{#each shirts as |shirt|}}
         {{#if shirt.images}}
-        <a href="/closet/shirts/{{shirt.name}}"><img src={{shirt.images}} alt="shirt-image" class="shirt-image"></img></a>
+        <a href="/closet/shirts/{{shirt.name}}"><img src={{shirt.images}} alt="shirt-image" class="shirt-image responsive-img"></img></a>
         {{else}}
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="shirt-image" class="shirt-image"></img>
         {{/if}}
