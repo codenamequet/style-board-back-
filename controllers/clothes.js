@@ -11,7 +11,7 @@ const router        = express.Router()
 router.get('/closet/accessories', (req, res) => {
     Accessories.find({})
         .then(accessories => {
-            res.render('accessories', { accessories: accessories })
+            res.json({ accessories: accessories })
         })
         .catch(err => {
             console.log(err)
@@ -21,7 +21,7 @@ router.get('/closet/accessories', (req, res) => {
 router.get('/closet/shirts', (req, res) => {
     Shirts.find({})
         .then(shirts => {
-            res.render('shirts', { shirts: shirts })
+            res.json({ shirts: shirts })
         })
         .catch(err => {
             console.log(err)
@@ -31,7 +31,7 @@ router.get('/closet/shirts', (req, res) => {
 router.get('/closet/pants', (req, res) => {
     Pants.find({})
         .then(pants => {
-            res.render('pants', { pants: pants })
+            res.json({ pants: pants })
         })
         .catch(err => {
             console.log(err)
@@ -40,12 +40,10 @@ router.get('/closet/pants', (req, res) => {
 
 router.get('/closet/shoes', (req, res) => {
     Shoes.find({})
-        .then(shoes => {
-            res.render('shoes', { shoes: shoes })
-        })
-        .catch(err => {
+         .then(shoes => res.json({ shoes: shoes }))
+         .catch(err => {
             console.log(err)
-        })
+          })
 })
 
 
@@ -53,7 +51,7 @@ router.get('/closet/shoes', (req, res) => {
 router.get('/closet/accessories/:name', (req, res) => {
     Accessories.findOne({ name: req.params.name })
         .then(accessory => {
-            res.render('update-accessories', { accessory })
+            res.json('update-accessories', { accessory })
         })
         .catch(err => {
             console.log(err)
@@ -63,7 +61,7 @@ router.get('/closet/accessories/:name', (req, res) => {
 router.get('/closet/shirts/:name', (req, res) => {
     Shirts.findOne({ name: req.params.name })
         .then(shirt => {
-            res.render('update-shirts', { shirt })
+            res.json('update-shirts', { shirt })
         })
         .catch(err => {
             console.log(err)
@@ -73,7 +71,7 @@ router.get('/closet/shirts/:name', (req, res) => {
 router.get('/closet/pants/:name', (req, res) => {
     Pants.findOne({ name: req.params.name })
         .then(pant => {
-            res.render('update-pants', { pant })
+            res.json('update-pants', { pant })
         })
         .catch(err => {
             console.log(err)
@@ -82,9 +80,7 @@ router.get('/closet/pants/:name', (req, res) => {
 
 router.get('/closet/shoes/:name', (req, res) => {
     Shoes.findOne({ name: req.params.name })
-        .then(shoe => {
-            res.render('item', { shoe })
-        })
+        .then(shoe => { res.json({ shoe })})
         .catch(err => {
             console.log(err)
         })
@@ -96,35 +92,33 @@ router.get('/closet/shoes/:name', (req, res) => {
 
 
 router.get('/about', (req, res) => {
-    res.render('about')
+    res.json('about')
 })
 
 router.get('/closet', (req, res) => {
-    res.render('closet')
+    res.send('closet')
 })
 
 //route for rendering "add" pages
 router.get('/add-accessories', (req, res) => {
-    res.render('add-accessories')
+    res.json('add-accessories')
 })
 
 router.get('/add-shirts', (req, res) => {
-    res.render('add-shirts')
+    res.json('add-shirts')
 })
 
 router.get('/add-pants', (req, res) => {
-    res.render('add-pants')
+    res.json('add-pants')
 })
 
 router.get('/add-shoes', (req, res) => {
-    res.render('add-shoes')
+    res.json('add-shoes')
 })
 
 router.post('/add-shoes', (req, res) => { 
     Shoes.create(req.body.shoes)
-        .then(shoes => {
-            res.redirect(`/closet/shoes/${shoes.name}`)
-        })
+        .then(shoes => { res.redirect(`/closet/shoes/`)})
         .catch(err => {
             console.log(err)
         })
@@ -133,7 +127,7 @@ router.post('/add-shoes', (req, res) => {
 router.post('/add-accessories', (req, res) => { 
     Accessories.create(req.body.accessories)
         .then(accessories => {
-            res.redirect(`/closet/accessories/${accessories.name}`)
+            res.redirect(`/closet/accessories/`)
         })
         .catch(err => {
             console.log(err)
@@ -143,7 +137,7 @@ router.post('/add-accessories', (req, res) => {
 router.post('/add-shirts', (req, res) => { 
     Shirts.create(req.body.shirts)
         .then(shirts => {
-            res.redirect(`/closet/shirts/${shirts.name}`)
+            res.redirect(`/closet/shirts/`)
         })
         .catch(err => {
             console.log(err)
@@ -153,7 +147,7 @@ router.post('/add-shirts', (req, res) => {
 router.post('/add-pants', (req, res) => { 
     Pants.create(req.body.pants)
         .then(pants => {
-            res.redirect(`/closet/pants/${pants.name}`)
+            res.redirect(`/closet/pants/`)
         })
         .catch(err => {
             console.log(err)

@@ -2,11 +2,13 @@
 
         {{#each shoes as |shoe|}}
             {{#if shoe.images}}
+            <div class="item-container">
             <a href="/closet/shoes/item"><img src={{shoe.images}} alt="shoes-image" class="shoes-image responsive-img"></img></a>
+            </div>
             {{else}}
             <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/340719-200.png" alt="shoes-image" class="shoes-image responsive-img"></img>
             {{/if}}
-            <a href="/closet/shoes/{{shoe.name}}" class="center">{{shoe.name}}</a>
+            {{!-- <a href="/closet/shoes/{{shoe.name}}" class="center">{{shoe.name}}</a> --}}
         {{/each}}
 
 <div class=row>
