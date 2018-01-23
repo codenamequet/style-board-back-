@@ -4,20 +4,23 @@ const clothes           = require('./controllers/clothes.js') //why do I need .j
 const app               = express()
 const parser            = require('body-parser')
 const methodOverride    = require('method-override')
+const cors              = require('cors')
 
 app.set('port', process.env.PORT || 8000)
 
-app.set('view engine', 'hbs')
+// app.set('view engine', 'hbs')
 
-app.engine(
-    '.hbs',
-    hbs({
-        extname: '.hbs',
-        partialsDir: 'views/',
-        layoutsDir: 'views/',
-        defaultLayout: 'layouts-main'
-    })
-)
+// app.engine(
+//     '.hbs',
+//     hbs({
+//         extname: '.hbs',
+//         partialsDir: 'views/',
+//         layoutsDir: 'views/',
+//         defaultLayout: 'layouts-main'
+//     })
+// )
+
+app.use(cors())
 
 app.use(parser.urlencoded( { extended: true } ))
 app.use('/assets', express.static('public'))
