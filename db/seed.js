@@ -10,10 +10,10 @@ const pantsSeeds        = require('./pants-seeds.json')
 const shoesSeeds        = require('./shoes-seeds.json')
 
 Accessories.remove({})
-.then(() => {
+    .then(() => {
     return Accessories.collection.insert(accessoriesSeeds)
 })
-.then(() => {
+    .then(() => {
     process.exit()
 })
 
