@@ -177,12 +177,22 @@ router.post('/closet/accessories/:name', (req, res) => {
 
 router.post('/closet/shirts/:name', (req, res) => {
     Shirts.create(req.body.shirts)
-        .then(shirt => {
+          .then(shirt => {
             res.redirect('/closet/shirts/:name')
-        })
-        .catch(err => {
+          })
+          .catch(err => {
             console.log(err)
-        })
+          })
+})
+
+router.post('/closet/pants/:name', (req, res) => {
+    Pants.create(req.body.pants)
+         .then(pant => {
+             res.redirect('/closet/pants/:name')
+         })
+         .catch(err => {
+             console.log(err)
+         })
 })
 
 router.put('/closet/accessories/:name', (req, res) => {
