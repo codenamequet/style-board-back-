@@ -52,7 +52,7 @@ router.get('/closet/shoes', (req, res) => {
 router.get('/closet/accessories/:name', (req, res) => {
     Accessories.findOne({ name: req.params.name })
         .then(accessory => {
-            res.json('update-accessories', { accessory })
+            res.json({ accessory })
         })
         .catch(err => {
             console.log(err)
@@ -62,7 +62,7 @@ router.get('/closet/accessories/:name', (req, res) => {
 router.get('/closet/shirts/:name', (req, res) => {
     Shirts.findOne({ name: req.params.name })
         .then(shirt => {
-            res.json('update-shirts', { shirt })
+            res.json({ shirt })
         })
         .catch(err => {
             console.log(err)
@@ -72,7 +72,7 @@ router.get('/closet/shirts/:name', (req, res) => {
 router.get('/closet/pants/:name', (req, res) => {
     Pants.findOne({ name: req.params.name })
         .then(pant => {
-            res.json('update-pants', { pant })
+            res.json({ pant })
         })
         .catch(err => {
             console.log(err)
