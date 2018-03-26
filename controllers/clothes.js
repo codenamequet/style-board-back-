@@ -4,6 +4,7 @@ const Shirts        = require('../db/models/shirts.js').model('Shirts')
 const Pants         = require('../db/models/pants.js').model('Pants')
 const Shoes         = require('../db/models/shoes.js').model('Shoes')
 
+const parser        = require('body-parser')
 const router        = express.Router()
 
 //routes for rendering item pages pages
