@@ -10,146 +10,146 @@ const router        = express.Router()
 //routes for rendering item pages pages
 
 router.get('/closet/accessories', (req, res) => {
-    Accessories.find({})
-        .then(accessories => {
-            res.json({ accessories: accessories })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Accessories.find({})
+  .then(accessories => {
+    res.json({ accessories: accessories })
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/closet/shirts', (req, res) => {
-    Shirts.find({})
-        .then(shirts => {
-            res.json({ shirts: shirts })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Shirts.find({})
+  .then(shirts => {
+    res.json({ shirts: shirts })
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/closet/pants', (req, res) => {
-    Pants.find({})
-        .then(pants => {
-            res.json({ pants: pants })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Pants.find({})
+  .then(pants => {
+    res.json({ pants: pants })
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/closet/shoes', (req, res) => {
-    Shoes.find({})
-         .then(shoes => res.json({ shoes: shoes }))
-         .catch(err => {
-            console.log(err)
-          })
+  Shoes.find({})
+  .then(shoes => res.json({ shoes: shoes }))
+  .catch(err => {
+  console.log(err)
+  })
 })
 
 
 // Routes for getting individual item pages
 router.get('/closet/accessories/:name', (req, res) => {
-    Accessories.findOne({ name: req.params.name })
-        .then(accessory => {
-            res.json({ accessory })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Accessories.findOne({ name: req.params.name })
+  .then(accessory => {
+    res.json({ accessory })
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/closet/shirts/:name', (req, res) => {
-    Shirts.findOne({ name: req.params.name })
-        .then(shirt => {
-            res.json({ shirt })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Shirts.findOne({ name: req.params.name })
+  .then(shirt => {
+    res.json({ shirt })
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/closet/pants/:name', (req, res) => {
-    Pants.findOne({ name: req.params.name })
-        .then(pant => {
-            res.json({ pant })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Pants.findOne({ name: req.params.name })
+  .then(pant => {
+    res.json({ pant })
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/closet/shoes/:name', (req, res) => {
-    Shoes.findOne({ name: req.params.name })
-        .then(shoe => { res.json({ shoe })})
-        .catch(err => {
-            console.log(err)
-        })
+  Shoes.findOne({ name: req.params.name })
+  .then(shoe => { res.json({ shoe })})
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.get('/about', (req, res) => {
-    res.json('about')
+  res.json('about')
 })
 
 router.get('/closet', (req, res) => {
-    res.send('closet')
+  res.send('closet')
 })
 
 //route for rendering "add" pages
 router.get('/add-accessories', (req, res) => {
-    res.json('add-accessories')
+  res.json('add-accessories')
 })
 
 router.get('/add-shirts', (req, res) => {
-    res.json('add-shirts')
+  res.json('add-shirts')
 })
 
 router.get('/add-pants', (req, res) => {
-    res.json('add-pants')
+  res.json('add-pants')
 })
 
 router.get('/add-shoes', (req, res) => {
-    res.json('add-shoes')
+  res.json('add-shoes')
 })
 
 router.post('/closet/shoes/', (req, res) => {
-    Shoes.create(req.body.shoes)
-        .then(res => {
-            res.json({shoes})
-        })
-        .catch(err => {
-            console.log(err)
-        })
+  Shoes.create(req.body.shoes)
+  .then(res => {
+    res.json({shoes})
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
-router.post('/closet/accessories/', (req, res) => {
-    Accessories.create(req.body.accessories)
-               .then(res => {
-                res.json({accessory: res})
-               })
-               .catch(err => {
-                   console.log(err)
-               })
+router.post('/closet/accessories', (req, res) => {
+  Accessories.create(req.body.accessories)
+  .then(res => {
+    res.json({accessory: res})
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.post('/closet/shirts/:name', (req, res) => {
-    Shirts.create(req.body.shirts)
-          .then(res => {
-            res.json({shirts})
-          })
-          .catch(err => {
-            console.log(err)
-          })
+  Shirts.create(req.body.shirts)
+  .then(res => {
+    res.json({shirts})
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.post('/closet/pants/:name', (req, res) => {
-    Pants.create(req.body.pants)
-         .then(res => {
-            res.json({accessory})
-         })
-         .catch(err => {
-             console.log(err)
-         })
+  Pants.create(req.body.pants)
+  .then(res => {
+    res.json({accessory})
+  })
+  .catch(err => {
+    console.log(err)
+  })
 })
 
 router.put('/closet/accessories/:name', (req, res) => {
