@@ -122,7 +122,7 @@ router.post('/closet/shoes/', (req, res) => {
         })
 })
 
-router.post('/closet/accessories', (req, res) => {
+router.post('/closet/accessories/', (req, res) => {
     Accessories.create(req.body.accessories)
                .then(res => {
                 res.json({accessory: res})
