@@ -8,18 +8,6 @@ const cors              = require('cors')
 
 app.set('port', process.env.PORT || 8000)
 
-// app.set('view engine', 'hbs')
-
-// app.engine(
-//     '.hbs',
-//     hbs({
-//         extname: '.hbs',
-//         partialsDir: 'views/',
-//         layoutsDir: 'views/',
-//         defaultLayout: 'layouts-main'
-//     })
-// )
-
 app.use(cors())
 
 app.use(parser.json())
