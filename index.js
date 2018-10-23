@@ -9,7 +9,7 @@ const cors              = require('cors')
 app.set('port', process.env.PORT || 8000)
 
 app.use(cors())
-
+app.options('*', cors())
 app.use(parser.json())
 app.use(parser.urlencoded( { extended: true } ))
 app.use('/assets', express.static('public'))
