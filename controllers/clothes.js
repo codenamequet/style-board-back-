@@ -123,8 +123,8 @@ router.post('/closet/shoes/', (req, res) => {
 })
 
 router.post('/closet/accessories', (req, res) => {
-  Accessories.create(req.body.accessor)
-  .then(accessory => {
+  Accessories.create(req.body.accessory)
+  .then(accessory => { // the argument can't be req or res cuz we already declared them on line 125 and don't wanna overwrite
     res.json({accessory})
   })
   .catch(err => {
