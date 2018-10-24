@@ -124,7 +124,7 @@ router.post('/closet/shoes/', (req, res) => {
 
 router.post('/closet/accessories', (req, res) => {
   Accessories.create(req.body.accessories)
-  .then(res => {
+  .then(acc => {
     res.json({accessory: res})
   })
   .catch(err => {
