@@ -125,7 +125,7 @@ router.post('/closet/shoes/', (req, res) => {
 router.post('/closet/accessories', (req, res) => {
   Accessories.create(req.body.accessory)
   .then(accessory => { // the argument can't be req or res cuz we already declared them on line 125 and don't wanna overwrite
-    res.json({accessory})
+    res.json({accessory: accessory})
   })
   .catch(err => {
     console.log(err)
